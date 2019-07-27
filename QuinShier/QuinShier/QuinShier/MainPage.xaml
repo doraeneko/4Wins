@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:QuinShier"
+             x:Class="QuinShier.MainPage"
+             Title="QuinShier">
+
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness">
+      <On Platform="iOS" Value="5,20,5,5" />
+      <On Platform="Android, WinPhone, Windows" Value="5,0,5,5" />
+    </OnPlatform>
+  </ContentPage.Padding>
+
+  <ContentView>
+
+    <Grid x:Name="mainGrid" ColumnSpacing="0" RowSpacing="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="2*" />
+        <RowDefinition Height="1*" />
+        <RowDefinition Height="7*" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0" />
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+      <StackLayout x:Name="headerStack" Grid.Row="0" Grid.Column="1" Spacing="0">
+        <StackLayout HorizontalOptions="Center" Spacing="0">
+          <Label Text="QuinShier" Font="Bold, Large" TextColor="Accent" />
+          <BoxView Color="Accent" HeightRequest="3" />
+        </StackLayout>
+        <Button Text="2-Player game" x:Name="startTwoPlayerGameButton" Clicked="OnTwoPlayersButtonClicked" />
+      </StackLayout>
+      <StackLayout x:Name="messagesStack" Grid.Row="1" Grid.Column="1" Spacing="5">
+        <StackLayout x:Name="congratulationsRed" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="0">
+          <Label Text="C" TextColor="Red" />
+          <Label Text="O" TextColor="Red" />
+          <Label Text="N" TextColor="Red" />
+          <Label Text="G" TextColor="Red" />
+          <Label Text="R" TextColor="Red" />
+          <Label Text="A" TextColor="Red" />
+          <Label Text="T" TextColor="Red" />
+          <Label Text="S" TextColor="Red" />
+          <Label Text="," TextColor="Red" />
+          <Label Text="R" TextColor="Red" />
+          <Label Text="E" TextColor="Red" />
+          <Label Text="D" TextColor="Red" />
+          <Label Text="!" TextColor="Red" />
+        </StackLayout>
+        <StackLayout x:Name="congratulationsBlue" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="0">
+          <Label Text="C" TextColor="Blue" />
+          <Label Text="O" TextColor="Blue" />
+          <Label Text="N" TextColor="Blue" />
+          <Label Text="G" TextColor="Blue" />
+          <Label Text="R" TextColor="Blue" />
+          <Label Text="A" TextColor="Blue" />
+          <Label Text="T" TextColor="Blue" />
+          <Label Text="S" TextColor="Blue" />
+          <Label Text="," TextColor="Blue" />
+          <Label Text="B" TextColor="Blue" />
+          <Label Text="L" TextColor="Blue" />
+          <Label Text="U" TextColor="Blue" />
+          <Label Text="E" TextColor="Blue" />
+          <Label Text="!" TextColor="Blue" />
+        </StackLayout>
+        <StackLayout x:Name="remisMessage" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="0">
+          <Label Text="R" TextColor="Black" />
+          <Label Text="E" TextColor="Black" />
+          <Label Text="M" TextColor="Black" />
+          <Label Text="I" TextColor="Black" />
+          <Label Text="S" TextColor="Black" />
+          <Label Text="!" TextColor="Black" />
+        </StackLayout>
+      </StackLayout>
+      <ContentView Grid.Row="2" Grid.Column="1">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <local:GameBoard x:Name="Board" />
+        </Grid>
+
+      </ContentView>
+    </Grid>
+  </ContentView>
+</ContentPage>
